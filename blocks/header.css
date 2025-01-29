@@ -2,7 +2,7 @@
   background-color: #ffff;
   display: flex;
   justify-content: center;
-  width: 1444px;
+  width: 100%;
   height: 46px;
 }
 
@@ -10,19 +10,4 @@
   width: 94px;
   height: 26px;
   padding: 10px 0;
-}
-
-@media screen and (max-width: 927px) {
-  .header {
-    padding: 0;
-    width: 940px;
-  }
-}
-
-@media screen and (max-width: 627px) {
-  .header {
-    padding: 0;
-    width: 320px;
-    height: 46px;
-  }
 }
