@@ -141,6 +141,12 @@ Images: The photos used in the gallery are sourced from Figma.
 Icons: Icons such as the edit and like buttons are sourced from Figma.
 Fonts: Fonts user were from google fonts.
 
+## Deployment
+
+This webpage is deployed to GitHub Pages
+
+- Deployment Link:
+
 ## Video recorded:
 
 https://drive.google.com/file/d/1aJURJRTT82R8cNPMud3Ja6o1ci8Ak-8q/view?usp=drivesdk
