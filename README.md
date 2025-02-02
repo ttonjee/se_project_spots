@@ -145,7 +145,7 @@ Fonts: Fonts user were from google fonts.
 
 This webpage is deployed to GitHub Pages
 
-- [Deployment Link](https://ttonjee.github.io/se_project_spots/)
+[Deployment Link](https://ttonjee.github.io/se_project_spots/)
 
 ## Video recorded:
 
