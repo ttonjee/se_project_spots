@@ -10,3 +10,9 @@
     padding-right: 16px;
   }
 }
+
+@media screen and (max-width: 1320px) {
+  .content {
+    max-width: fit-content;
+  }
+}

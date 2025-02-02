@@ -4,6 +4,8 @@
 .card__image {
   width: 413px;
   height: 413px;
+  object-fit: cover;
+  display: block;
   border-radius: 8px;
 }
 
@@ -36,6 +38,7 @@
   background-position: center;
   border: none;
   margin-top: 12px;
+  opacity: 40%;
   padding: 0;
   height: 20px;
   width: 23px;

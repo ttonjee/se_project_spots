@@ -11,6 +11,9 @@
 }
 
 @media screen and (max-width: 627px) {
+  .page {
+    min-width: 320px;
+  }
   .page__section {
     padding: 0;
   }
