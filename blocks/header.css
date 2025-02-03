@@ -10,7 +10,3 @@
   height: 26px;
   padding: 10px 0;
 }
-
-@media screen and (max-width: 627px) {
-  padding-top: 20px;
-}

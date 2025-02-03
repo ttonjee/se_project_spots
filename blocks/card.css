@@ -31,14 +31,13 @@
 }
 
 .card__like-button {
-  background-image: url(../images/Like\ Icon.svg);
+  background-image: url(../images/likebtn.svg);
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
   cursor: pointer;
-  color: rgba(33, 33, 33, 1);
   margin-top: 12px;
   opacity: 40%;
   padding: 0;
@@ -47,7 +46,6 @@
 }
 
 .card__like-button:hover {
-  background-image: url(../images/State=Hover.svg);
   opacity: 1;
 }
 
