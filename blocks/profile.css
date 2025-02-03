@@ -25,12 +25,17 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
-  background-color: #212121;
+  background-color: rgba(33, 33, 33, 1);
   color: rgba(252, 245, 229, 1);
   border: none;
+  cursor: pointer;
   border-radius: 8px;
   margin-top: auto;
   margin-left: auto;
+}
+
+.profile__add-button-description:hover {
+  background-color: rgba(33, 33, 33, 0.8);
 }
 
 .profile__add-button {
@@ -78,12 +83,17 @@
   font-size: 16px;
   line-height: 1;
   background-color: rgba(252, 245, 229, 1);
-  color: rgba(33, 33, 33);
+  color: rgba(33, 33, 33, 1);
   opacity: 70%;
+  cursor: pointer;
   border: none;
   gap: 8px;
   margin-top: auto;
   padding: 0;
+}
+
+.profile__edit-button:hover {
+  opacity: 1;
 }
 
 .profile__edit-button::before {
@@ -104,6 +114,7 @@
     width: 80px;
     height: 80px;
     margin: 0 0 12px;
+    padding-top: 20px;
   }
 
   .profile__column {
@@ -127,6 +138,5 @@
 
   .profile__add-button-description {
     width: 288px;
-    margin: 0 0 20px;
   }
 }

@@ -1,12 +1,16 @@
 .header {
   background-color: #ffff;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .header__logo {
   width: 94px;
   height: 26px;
   padding: 10px 0;
+}
+
+@media screen and (max-width: 627px) {
+  padding-top: 20px;
 }
