@@ -103,7 +103,7 @@
   background-image: url("../images/Edit.svg");
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 700px) {
   .profile {
     flex-direction: column;
     max-width: 288px;
@@ -125,11 +125,13 @@
     font-size: 20px;
     margin: 0 0 6px;
     max-width: 288px;
+    overflow-x: hidden;
   }
 
   .profile__description {
     max-width: 288px;
     margin: auto;
+    overflow-x: hidden;
   }
 
   .profile__edit-button {
