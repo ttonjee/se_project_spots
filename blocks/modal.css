@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
 }
 
 .modal__opened {
