@@ -63,8 +63,7 @@ function getCardElement(data) {
   const cardElementImage = cardElement.querySelector(".card__image");
   cardElementImage.src = data.link;
 
-  const cardElementAlt = cardElement.querySelector(".alternate");
-  cardElementImage.alt = data.alt;
+  cardElementImage.alt = data.name;
 
   return cardElement;
 }
@@ -72,11 +71,11 @@ function getCardElement(data) {
 function openModal() {
   profileEditModalNameInput.value = profileName.textContent;
   profileEditModalDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal__opened");
+  profileEditModal.classList.add("modal_opened");
 }
 
 function closeModal() {
-  profileEditModal.classList.remove("modal__opened");
+  profileEditModal.classList.remove("modal_opened");
 }
 
 function handleProfileFormSubmit(evt) {
