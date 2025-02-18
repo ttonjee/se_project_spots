@@ -65,6 +65,7 @@
   border-radius: 8px;
   padding: 18px 32px;
   width: 156px;
+  cursor: pointer;
 }
 
 .modal__close-btn {
@@ -78,6 +79,7 @@
   border: none;
   opacity: 40%;
   cursor: pointer;
+  padding: 0;
 }
 
 .modal__close-btn:hover {
@@ -99,6 +101,7 @@ input::placeholder {
 @media screen and (max-width: 700px) {
   .modal {
     padding: 0 10px;
+    margin: 0;
   }
 
   .modal__container {
@@ -116,16 +119,19 @@ input::placeholder {
   }
 
   .modal__input {
-    max-width: 276px;
+    max-width: 250px;
     font-size: 16px;
+    margin-top: 8px;
   }
 
-  .modal__save-btn {
+  .modal__submit-btn {
     width: 100%;
   }
 
   .modal__close-btn {
+    position: absolute;
     top: 12px;
     right: 12px;
+    margin-top: 4px;
   }
 }

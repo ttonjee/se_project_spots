@@ -62,5 +62,10 @@
   .card__description {
     font-size: 16px;
     line-height: 16px;
+    margin-bottom: 5px;
+  }
+
+  .card__like-button {
+    flex-shrink: 0;
   }
 }
