@@ -37,7 +37,7 @@
               Edit Profile
             </button>
           </div>
-          <button type="button" class="profile__add-button-description">
+          <button type="button" class="profile__add-button-post">
             <img
               src="./images/Plusbutton.svg"
               alt="plus icon"
@@ -49,10 +49,19 @@
           <ul class="cards__list">
             <template id="card__template">
               <li class="card">
+                <button
+                  type="button"
+                  class="card__delete-button"
+                  aria-label="Delete this card"
+                ></button>
                 <img class="card__image" />
                 <div class="card__content">
                   <h2 class="card__description"></h2>
-                  <button type="button" class="card__like-button"></button>
+                  <button
+                    type="button"
+                    class="card__like-button"
+                    aria-label="Like this card"
+                  ></button>
                 </div>
               </li>
             </template>
@@ -87,6 +96,45 @@
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
+        </div>
+      </div>
+      <div class="modal" id="new__post-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn"></button>
+          <h2 class="modal__title">New post</h2>
+          <form class="modal__form">
+            <label for="new__post-link-input" class="modal__label"
+              >Image link
+              <input
+                id="new__post-link-input"
+                name="link"
+                type="url"
+                placeholder="Paste a link to the picture"
+                class="modal__input"
+              />
+            </label>
+            <label for="new__post-caption-input" class="modal__label"
+              >Caption
+              <input
+                id="new__post-caption-input"
+                name="caption"
+                type="text"
+                placeholder="Type your caption"
+                class="modal__input"
+              />
+            </label>
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="modal__preview">
+        <div class="modal__container modal__container_type_preview">
+          <button
+            type="button"
+            class="modal__close modal__close_type_preview"
+          ></button>
+          <img class="modal__image" id="preview__image" src="" alt="" />
+          <p class="modal__caption" id="preview__caption">Val Thorens</p>
         </div>
       </div>
     </div>
