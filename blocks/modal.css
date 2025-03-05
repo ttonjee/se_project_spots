@@ -10,9 +10,10 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
-.modal__opened {
+.modal_opened {
   visibility: visible;
 }
 .modal__container {
@@ -34,19 +35,22 @@
   flex-direction: column;
 }
 
-.modal__close_type_preview {
+.modal__close-btn.modal__close-btn_type_preview {
   background-image: url(../images/close-preview.svg);
   background-color: transparent;
   width: 40px;
   height: 40px;
-  position: absolute;
+  align-items: center;
   top: 0;
   right: -50px;
+  opacity: 1;
   border: none;
   cursor: pointer;
   z-index: 1;
   padding: 0;
-  transition: top 0.3s ease-in-out, right 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal__image {
@@ -165,6 +169,7 @@ input::placeholder {
 
   .modal__container {
     max-width: 300px;
+    padding: 12px;
   }
 
   .modal__title {
@@ -203,11 +208,17 @@ input::placeholder {
     font-size: 16px;
   }
 
-  .modal__container_type_preview {
+  #new__post-link-input::placeholder,
+  #new__post-caption-input::placeholder {
+    font-size: 16px;
   }
 
-  .modal__close_type_preview {
+  .modal__close-btn.modal__close-btn_type_preview {
     top: -41px;
-    right: 8px;
+    right: 0;
+  }
+
+  .modal__container_type_preview {
+    padding: 0;
   }
 }

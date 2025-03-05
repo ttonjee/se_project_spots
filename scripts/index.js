@@ -47,9 +47,10 @@ const imageModal = document.querySelector(
 );
 const previewCaption = document.querySelector(".modal__caption");
 const previewModal = document.querySelector("#modal__preview");
-const modalCloseButton = previewModal.querySelector(
-  ".modal__close_type_preview"
+const PreviewModalCloseButton = previewModal.querySelector(
+  ".modal__close-btn_type_preview"
 );
+const previewImage = previewModal.querySelector(".modal__image");
 
 //Profile Modal Elements
 const profileEditModal = document.querySelector("#profile__edit-modal");
@@ -89,12 +90,12 @@ const cardTemplate = document.querySelector("#card__template");
 
 //Funtion to open a Modal
 function openModal(modal) {
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
 }
 
 //Function to close a modal
 function closeModal(modal) {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
 }
 
 //Function to create a new card element
@@ -123,10 +124,9 @@ function getCardElement(data) {
 
   //Open Card Image Preview
   cardElementImage.addEventListener("click", () => {
-    previewModal.querySelector(".modal__image").src = cardElementImage.src;
-    previewModal.querySelector(".modal__image").alt = cardElementImage.alt;
-    previewModal.querySelector(".modal__caption").textContent =
-      cardElementImage.alt;
+    previewImage.src = cardElementImage.src;
+    previewImage.alt = cardElementImage.alt;
+    previewCaption.textContent = cardElementImage.alt;
 
     openModal(previewModal);
   });
@@ -143,8 +143,9 @@ function getCardElement(data) {
 
 //Handle Profile Form Submission
 function handleProfileFormSubmit(evt) {
+  // debugger;
   evt.preventDefault();
-  profileName.textContent = profileEditModalNameInput.value;
+  profileName.textContent = "";
   profileDescription.textContent = profileEditModalDescriptionInput.value;
   closeModal(profileEditModal);
 }
@@ -157,6 +158,7 @@ function handleNewPostFormSubmit(evt) {
   const name = newPostModalCaptionInput.value.trim();
 
   //Validate Inputs
+  debugger;
   const newCard = { name, link };
   console.log(newCard);
   const cardElement = getCardElement(newCard);
@@ -181,7 +183,7 @@ newPostButton.addEventListener("click", () => {
 });
 
 //Close Card Image Preview
-previewModal.addEventListener("click", () => {
+PreviewModalCloseButton.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
