@@ -83,7 +83,13 @@
                 type="text"
                 placeholder="Bessie Coleman"
                 class="modal__input"
+                required
+                minlength="2"
+                maxlength="40"
               />
+              <span id="profile__name-input-error" class="modal__error"
+                >Please fill out this field.</span
+              >
             </label>
             <label for="profile__description-input" class="modal__label"
               >Description
@@ -92,7 +98,14 @@
                 type="text"
                 placeholder="Civil Aviator"
                 class="modal__input"
+                required
+                minlength="2"
+                maxlength="200"
               />
+              <span id="profile__description-input-error" class="modal__error"
+                >Please lengthen this text to 2 characters or more (you are
+                currently usina 1 character).</span
+              >
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -103,7 +116,7 @@
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form">
-            <label for="new__post-link-input" class="modal__label"
+            <label for="new__post-link-input" class="modal__label" required
               >Image link
               <input
                 id="new__post-link-input"
@@ -112,6 +125,9 @@
                 placeholder="Paste a link to the picture"
                 class="modal__input"
               />
+              <span id="new__post-link-input-error" class="modal__error"
+                >Please enter a URL.</span
+              >
             </label>
             <label for="new__post-caption-input" class="modal__label"
               >Caption
@@ -121,7 +137,13 @@
                 type="text"
                 placeholder="Type your caption"
                 class="modal__input"
+                required
+                minlength="2"
+                maxlength="30"
               />
+              <span id="new__post-caption-input-error" class="modal__error"
+                >Please fill out this field.</span
+              >
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -143,6 +165,7 @@
         </div>
       </div>
     </div>
+    <script deter src="./scripts/validation.js"></script>
     <script deter src="./scripts/index.js"></script>
   </body>
 </html>

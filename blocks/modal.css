@@ -106,6 +106,19 @@
   border: 1px solid rgba(33, 33, 33, 0.4);
   border-radius: 8px;
   cursor: pointer;
+  margin-bottom: 0;
+}
+
+.modal__error {
+  display: block;
+  color: rgba(255, 0, 0, 0.7);
+  margin-top: 8px;
+  max-width: 630px;
+  visibility: hidden;
+}
+
+.modal__error-visible {
+  visibility: visible;
 }
 
 .modal__submit-btn {
@@ -118,6 +131,11 @@
   padding: 18px 32px;
   width: 156px;
   cursor: pointer;
+}
+
+.modal__submit-btn_disabled {
+  background: rgba(33, 33, 33, 0.3);
+  cursor: not-allowed;
 }
 
 .modal__close-btn {
@@ -222,5 +240,9 @@ input::placeholder {
 
   .modal__container_type_preview {
     padding: 0;
+  }
+
+  .modal__error {
+    max-width: 276px;
   }
 }
