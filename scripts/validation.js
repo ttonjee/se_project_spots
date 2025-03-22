@@ -52,12 +52,18 @@ const toggleButtonState = (inputList, buttonElement, config) => {
 const resetFormValidation = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   const buttonElement = formEl.querySelector(config.submitButtonSelector);
+  console.log("Form element:", formEl);
+  console.log("Config:", config);
 
   inputList.forEach((inputElement) => {
     hideInputError(formEl, inputElement, config);
   });
 
   toggleButtonState(inputList, buttonElement, config);
+};
+
+const disableButton = (buttonEl) => {
+  buttonEl.disabled = true;
 };
 
 const setEventListeners = (formEl, config) => {
