@@ -41,8 +41,7 @@ const checkInputValidity = (formEl, inputEl, config) => {
 
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(config.inactiveButtonClass);
-    buttonElement.disabled = true;
+    disableButton(buttonElement, config);
   } else {
     buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.disabled = false;
@@ -62,8 +61,9 @@ const resetFormValidation = (formEl, config) => {
   toggleButtonState(inputList, buttonElement, config);
 };
 
-const disableButton = (buttonEl) => {
-  buttonEl.disabled = true;
+const disableButton = (buttonElement, config) => {
+  buttonElement.classList.add(config.inactiveButtonClass);
+  buttonElement.disabled = true;
 };
 
 const setEventListeners = (formEl, config) => {

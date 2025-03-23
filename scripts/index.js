@@ -70,7 +70,7 @@ console.log(newPostFormElement);
 
 const modals = document.querySelectorAll(".modal");
 
-const newPostSubmitbtn = newPostModal.querySelector(".modal__submit");
+const newPostSubmitbtn = newPostModal.querySelector(".modal__submit-btn");
 
 //Profile Input Elements for Modals
 const profileEditModalNameInput = profileEditModal.querySelector(
@@ -187,15 +187,9 @@ function handleNewPostFormSubmit(evt) {
   cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
-  newPostFormElement.querySelector(validationConfig.submitButtonSelector);
 
   newPostFormElement.reset();
-  resetFormValidation(newPostFormElement, validationConfig);
-
-  disableButton(newPostSubmitbtn);
-
-  newPostModalLinkInput.value = "";
-  newPostModalCaptionInput.value = "";
+  disableButton(newPostSubmitbtn, validationConfig);
 }
 
 //Open Profile Edit Modal
@@ -209,11 +203,6 @@ profileEditButton.addEventListener("click", () => {
 //Open New Post Modal
 newPostButton.addEventListener("click", () => {
   openModal(newPostModal);
-});
-
-//Close Card Image Preview
-previewModalCloseButton.addEventListener("click", () => {
-  closeModal(previewModal);
 });
 
 //Handle Profile Form Submission
