@@ -38,6 +38,7 @@ const checkInputValidity = (formEl, inputEl, config) => {
     hideInputError(formEl, inputEl, config);
   }
 };
+console.log("test");
 
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {

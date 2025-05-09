@@ -16,17 +16,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="pages/index.css" />
-    <title>Spots</title>
+    <title>Webpack</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/Logo.svg" alt="header logo" class="header__logo" />
+        <img
+          src="<%=require('./images/Logo.svg')%>"
+          alt="header logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
+            src="<%=require('./images/avatar.jpg')%>"
             alt="profile picture"
             class="profile__avatar"
           />
@@ -39,7 +43,7 @@
           </div>
           <button type="button" class="profile__add-button-post">
             <img
-              src="./images/Plusbutton.svg"
+              src="<%=require('./images/Plusbutton.svg')%>"
               alt="plus icon"
               class="profile__add-button"
             />New Post
@@ -155,17 +159,11 @@
             type="button"
             class="modal__close-btn modal__close-btn_type_preview"
           ></button>
-          <img
-            class="modal__image"
-            id="preview__image"
-            src="  https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
-            alt=""
-          />
+          <img class="modal__image" id="preview__image" alt="" />
           <p class="modal__caption" id="preview__caption">Golden Gate bridge</p>
         </div>
       </div>
     </div>
-    <script defer src="./scripts/validation.js"></script>
-    <script defer src="./scripts/index.js"></script>
+    <script src="./dist/main.js"></script>
   </body>
 </html>
