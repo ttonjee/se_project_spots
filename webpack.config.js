@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require("path"); // This is the missing line
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -12,7 +12,6 @@ module.exports = {
     filename: "main.js",
     publicPath: "",
   },
-
   mode: "development",
   devtool: "inline-source-map",
   stats: "errors-only",
@@ -54,6 +53,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      inject: "body",
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

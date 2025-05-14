@@ -15,7 +15,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="pages/index.css" />
+
     <title>Webpack</title>
   </head>
   <body>
@@ -29,11 +29,20 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="profile picture"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__edit-avatar-btn">
+              <img
+                src="<%=require('./images/pencil.svg')%>"
+                alt="pencil icon"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <img
+              src="<%=require('./images/avatar.jpg')%>"
+              alt="profile picture"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
@@ -163,7 +172,47 @@
           <p class="modal__caption" id="preview__caption">Golden Gate bridge</p>
         </div>
       </div>
+      <div class="modal" id="delete__card-modal">
+        <div class="modal__container" data-type="delete-confirmation">
+          <button
+            type="button"
+            class="modal__close-btn modal__close-btn_type_delete"
+          ></button>
+          <h2 class="modal__title">
+            Are you sure you want to delete this message?
+          </h2>
+          <form class="modal__form">
+            <button
+              type="submit"
+              class="modal__button modal__button_type_delete"
+            ></button>
+            <button
+              type="button"
+              class="modal__button modal__button_type_cancel"
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-    <script src="./dist/main.js"></script>
+    <div class="modal" id="avatar__edit-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close-btn"></button>
+        <h2 class="modal__title">Edit profile avatar</h2>
+        <form name="edit__avatar-form" class="modal__form">
+          <label for="profile__avatar-input" class="modal__label"
+            >Profile Picture
+            <input
+              id="profile__avatar-input"
+              type="url"
+              placeholder="Paste the link to an image"
+              class="modal__input"
+            />
+          </label>
+          <button type="submit" class="modal__submit-btn">Save</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
