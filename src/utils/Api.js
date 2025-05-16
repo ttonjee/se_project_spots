@@ -59,21 +59,6 @@ class Api {
     }).then(this._checkResponse);
   }
 
-  deleteCardLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-      method: "DELETE",
-      headers: this._headers,
-    }).then(this._checkResponse);
-  }
-
-  updateAvatar(avatar) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
-      method: "PATCH",
-      headers: this._headers,
-      body: JSON.stringify({ avatar }),
-    }).then(this._checkResponse);
-  }
-
   setUserAvatar({ avatar }) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
