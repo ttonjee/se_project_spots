@@ -116,6 +116,7 @@ cancelCardModal.addEventListener("click", function () {
 // Delete modal logic
 const deleteCardModal = document.querySelector("#delete__card-modal");
 const deleteForm = deleteCardModal.querySelector(".modal__form");
+const deleteButton = deleteForm.querySelector(".modal__button_type_delete"); // Store button reference
 
 let selectedCard;
 let selectedCardId;
@@ -128,20 +129,22 @@ function handleDeleteCard(cardElement, data) {
 
 const handleDeleteSubmit = (evt) => {
   evt.preventDefault();
-  const submitButton = deleteForm.querySelector(".modal__button_type_delete");
-  submitButton.textContent = "Deleting...";
+
+  deleteButton.textContent = "Deleting...";
+
   api
     .deleteCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
       closeModal(deleteCardModal);
     })
-    .catch(console.error)
+    .catch((err) => {
+      console.error(`Error: Failed to delete card - ${err}`);
+    })
     .finally(() => {
-      submitButton.textContent = "Yes"; // Reset button text
+      deleteButton.textContent = "Delete";
     });
 };
-
 deleteForm.addEventListener("submit", handleDeleteSubmit);
 
 // Create card element
@@ -211,7 +214,9 @@ function handleProfileFormSubmit(evt) {
       avatarForm.reset();
       disableButton(submitButton, validationConfig);
     })
-    .catch((err) => console.error(`Error: ${err}`))
+    .catch((err) => {
+      console.error(`Error: Failed to update profile information - ${err}`);
+    })
     .finally(() => {
       submitButton.textContent = "Save";
     });
@@ -264,9 +269,11 @@ avatarForm.addEventListener("submit", (evt) => {
       avatarForm.reset();
       disableButton(submitButton, validationConfig);
     })
-    .catch((err) => console.error(`Error: ${err}`))
+    .catch((err) => {
+      console.error(`Error: Failed to update avatar - ${err}`);
+    })
     .finally(() => {
-      submitButton.textContent = "Save"; // Reset button text
+      submitButton.textContent = "Save";
     });
 });
 
@@ -297,16 +304,23 @@ const api = new Api({
 });
 
 // Load user and card data
-api.getAppInfo().then(([cards, userInfo]) => {
-  const userId = userInfo._id;
-  cards.forEach((card) => {
-    const cardElement = getCardElement(card, userId);
-    cardsList.append(cardElement);
-  });
+api
+  .getAppInfo()
+  .then(([cards, userInfo]) => {
+    // Process user info
+    profileName.textContent = userInfo.name;
+    profileDescription.textContent = userInfo.about;
+    profileAvatar.src = userInfo.avatar;
 
-  profileName.textContent = userInfo.name;
-  profileDescription.textContent = userInfo.about;
-  profileAvatar.src = userInfo.avatar;
-});
+    // Process cards
+    const userId = userInfo._id;
+    cards.forEach((card) => {
+      const cardElement = getCardElement(card, userId);
+      cardsList.append(cardElement);
+    });
+  })
+  .catch((err) => {
+    console.error(`Error: Failed to load page data - ${err}`);
+  });
 
 enableValidation(validationConfig);

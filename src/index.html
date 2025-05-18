@@ -185,7 +185,9 @@
             <button
               type="submit"
               class="modal__button modal__button_type_delete"
-            ></button>
+            >
+              Delete
+            </button>
             <button
               type="button"
               class="modal__button modal__button_type_cancel"
@@ -208,7 +210,11 @@
               type="url"
               placeholder="Paste the link to an image"
               class="modal__input"
+              required
             />
+            <span id="profile__avatar-input-error" class="modal__error"
+              >Please enter a URL.</span
+            >
           </label>
           <button type="submit" class="modal__submit-btn">Save</button>
         </form>
